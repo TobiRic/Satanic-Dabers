@@ -1,0 +1,14 @@
+
+<%- include("partials/header") %>
+
+<h2>Admin Panel</h2>
+
+<div class="dropzone" id="dropzone">
+<p>Drag & Drop Video Here</p>
+</div>
+
+<form action="/admin/upload" method="POST" enctype="multipart/form-data">
+<input name="title" placeholder="title">
+<input type="file" name="video">
+<button>Upload</button>
+</form>

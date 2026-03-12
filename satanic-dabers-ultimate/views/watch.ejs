@@ -1,0 +1,19 @@
+
+<%- include("partials/header") %>
+
+<h2><%= video.title %></h2>
+
+<video width="700" controls>
+<source src="<%= video.videoUrl %>">
+</video>
+
+<p><%= video.views %> views</p>
+
+<div id="comments"></div>
+
+<input id="name" placeholder="name">
+<input id="text" placeholder="comment">
+<button onclick="sendComment()">Send</button>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/comments.js"></script>

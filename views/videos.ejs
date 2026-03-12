@@ -1,0 +1,33 @@
+
+<%- include("partials/header") %>
+
+<h2>Videos</h2>
+
+<div class="grid">
+<% videos.forEach(v=>{ %>
+
+<div class="video">
+
+<h3><%= v.title %></h3>
+
+<video controls width="350">
+<source src="<%= v.url %>">
+</video>
+
+<button onclick="likeVideo('<%= v._id %>')">❤️ <span id="likes-<%= v._id %>"><%= v.likes %></span></button>
+
+<div class="comments" id="comments-<%= v._id %>"></div>
+
+<form onsubmit="sendComment(event,'<%= v._id %>')">
+<input name="name" placeholder="name">
+<input name="text" placeholder="comment">
+<button>Send</button>
+</form>
+
+</div>
+
+<% }) %>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/app.js"></script>

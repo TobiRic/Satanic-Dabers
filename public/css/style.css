@@ -1,0 +1,48 @@
+
+body{
+background:#080808;
+color:white;
+font-family:Arial;
+margin:0;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:black;
+padding:15px;
+border-bottom:3px solid red;
+}
+
+nav a{
+margin:10px;
+color:white;
+text-decoration:none;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:30px;
+padding:30px;
+}
+
+.video{
+border:1px solid red;
+padding:20px;
+}
+
+button{
+background:red;
+border:none;
+color:white;
+padding:8px 12px;
+cursor:pointer;
+}
+
+@media(max-width:700px){
+.top{
+flex-direction:column;
+}
+}
